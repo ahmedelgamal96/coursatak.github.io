@@ -279,7 +279,9 @@
 	var varApiKey = 'AIzaSyDDBk8tAkod1VRRNyFZF09fgQyMpnSe5HI';
 
 	$(".vedioBlock").each(function () {
+		var that = this;
 		var link = $(this).attr('id');
+
 		$(this).find(".popup-youtube").attr('href', 'https://www.youtube.com/watch?v=' + link);
 		$(this).find(".embed-responsive-item").attr('src', 'https://www.youtube.com/embed/' + link);
 		function getVids() {
@@ -294,8 +296,7 @@
 				}
 			)
 			function ChangeTitle(titleText) {
-				$('.vedioTitle').text(titleText);
-				//$(this).find('.vedioTitle').removeClass("vedioTitle"); 
+				$(that).find('.vedioTitle').text(titleText);
 			}
 		}
 		getVids();
